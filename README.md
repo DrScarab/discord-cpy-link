@@ -87,6 +87,14 @@ node --check discord-fullsize-url.user.js
 
 To test changes, paste the file into your userscript manager and reload Discord. Console messages are prefixed with `[Copy URL]`.
 
+## AI assistance
+
+This project was developed with AI assistance: the implementation was written
+by an AI coding agent (OpenCode with a DeepSeek model) from the maintainer's
+requirements, and every change was tested against the live Discord web client
+before being committed. The maintainer is responsible for the code and for
+reviewing contributions.
+
 ## License
 
 MIT © 2026 DrScarab
