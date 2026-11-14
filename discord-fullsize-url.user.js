@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Discord: Copy full-size media & link URLs
 // @namespace    https://github.com/DrScarab/discord-cpy-link
-// @version      1.7.1
+// @version      1.7.2
 // @description  Hover an image, video, audio file, sticker, link preview, invite or website link in Discord and a small button appears in its corner: click it to copy the full URL (CDN signature included) to the clipboard, ready to paste into another channel or a new browser tab.
 // @author       DrScarab
 // @license      MIT
@@ -788,10 +788,13 @@
     if (!anchor) return;
 
     // Discord puts its own "favourite" star in the top-left corner of GIF
-    // embeds (it even overflows above the media), so drop our button below it.
+    // media (embeds and uploaded .gif files, it even overflows above the
+    // media), so drop our button below it.
+    const wrap = media.closest && media.closest('[class*="imageWrapper"]');
     const isGif =
       media.getAttribute('aria-label') === 'GIF' ||
-      !!(media.closest && media.closest('[aria-label="GIF"]'));
+      /\.gif$/i.test(url.pathname) ||
+      !!(wrap && wrap.querySelector('[class*="gifFavoriteButton"]'));
     const dy = isGif ? 44 : 8;
 
     const btn = createButton(

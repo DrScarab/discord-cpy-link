@@ -41,7 +41,7 @@ Hover a piece of media or a link; a small button appears in its corner. Click it
 | Target | Button position |
 | --- | --- |
 | Image, video, sticker | top-left corner of the media |
-| GIF embed (Tenor/Klipy/Giphy) | top-left, below Discord's own favourite star |
+| GIF (uploaded or provider embed) | top-left, below Discord's own favourite star |
 | Audio player | top-left corner of the player |
 | Link preview / invite / Spotify | top-left corner of the card |
 | Inline link in text | just after the link text |
